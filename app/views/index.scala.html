@@ -1,5 +1,5 @@
 @(userAgent:models.UserAgent, content: String)
 
-@main {
+@main(Option(userAgent)) {
   @webgl()
 }
