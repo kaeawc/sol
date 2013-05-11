@@ -18,19 +18,19 @@ object Login extends FormPosting {
 			"username" -> text,
 			"password" -> text,
 			"remember" -> optional(text)
-		)(models.requests.account.Login.apply)(models.requests.account.Login.unapply)
+		)(models.Login.apply)(models.Login.unapply)
 	)
 
 	def get = HttpAction(Public()) { request => userAgent => Ok(views.html.login(userAgent, "")) }
 
 	/**
-	 * Given a POST to this controller, submit a models.requests.account.Login to be validated.
+	 * Given a POST to this controller, submit a models.Login to be validated.
 	 * If successful, respond with the dashboard and an access cookie
 	 * Otherwise respond with the login page
 	 */
-	def post = submit[models.requests.account.Login](form,models.requests.account.Login.validate,success,fail)
+	def post = submit[models.Login](form,models.Login.validate,success,fail)
 
-	def success(model:models.requests.account.Login) = {
+	def success(model:models.Login) = {
 		request:Request[AnyContent] => userAgent:UserAgent =>
 		val remember = (model.remember.isEmpty == false && model.remember.get == "on")
 		val user = User.getByUsername(model.username)
@@ -41,7 +41,7 @@ object Login extends FormPosting {
 		Ok(views.html.index(userAgent.withUser(user.get), "You are authorized! :D")).withCookies(cookie)
 	}
 
-	def fail(model:Option[models.requests.account.Login]) = {
+	def fail(model:Option[models.Login]) = {
 		request:Request[AnyContent] => userAgent:UserAgent =>
 		Ok(views.html.login(userAgent, "The username & password combination you submitted doesn't match any account in our system."))
 	}
