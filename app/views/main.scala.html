@@ -1,0 +1,14 @@
+@(userAgent:Option[models.UserAgent] = None)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sol</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/main.css")">
+        <script type="text/javascript" data-main="js/main" src="@routes.Assets.at("js/vendor/require.js")"></script>
+    </head>
+    <body>
+        @content
+    </body>
+</html>

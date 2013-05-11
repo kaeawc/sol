@@ -1,0 +1,7 @@
+GET     /                                  controllers.Application.index
+
+GET     /asteriod/:name                    controllers.Asteriods.get(name)
+POST    /asteriod                          controllers.Asteriods.post
+PUT     /asteriod/:name                    controllers.Asteriods.put
+
+GET     /*file                             controllers.Assets.at(path="/public", file)

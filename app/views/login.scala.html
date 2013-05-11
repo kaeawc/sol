@@ -1,0 +1,13 @@
+@(userAgent:models.UserAgent, content: String)
+
+@main(Option(userAgent)) {
+  <form name="login" method="POST" action="/login">
+    <input type="textbox" name="username" placeholder="username" />
+    <input type="password" name="password" placeholder="password" />
+    <input type="checkbox" name="remember" checked="" />
+    <input type="submit" value="Submit" />
+  </form>
+  <div>
+  @content
+  </div>
+}
