@@ -1,1 +1,2 @@
-angular.bootstrap document, ['app']
+angular.bootstrap document, ['app'], () ->
+  console.log 'loaded bootstrap'
