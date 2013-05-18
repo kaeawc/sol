@@ -5,12 +5,15 @@
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <!--<![endif]-->
-    <head>
-        <title>Sol</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/main.css")">
-        <script type="text/javascript" data-main="js/main" src="@routes.Assets.at("js/vendor/require.js")"></script>
-    </head>
-    <body>
-        @content
-    </body>
+<head>
+  <title>Sol</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/main.css")">
+  <script type="text/javascript" data-main="js/main" src="@routes.Assets.at("js/vendor/require.js")"></script>
+</head>
+<body>
+  @navbar(userAgent)
+  @content
+</body>
 </html>
