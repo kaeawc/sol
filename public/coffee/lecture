@@ -1,0 +1,83 @@
+lecture
+  key : hash - integer
+  secondary : [course_id, date, active]
+  value = {
+    professors : []
+    date : epoch
+    start_time : epoch
+    end_time : epoch
+    name : ''
+    description : ''
+    course_id : integer
+    active : integer (0 or 1)
+  }
+
+lecture_video
+  key : hash - integer
+  secondary : [lecture_hash]
+  value = {
+    date : epoch
+    name : ''
+    description : ''
+    duration : integer
+    bit_rate : integer
+    codec : ''
+    resolution : {
+      width: integer
+      height: integer
+    }
+    fps : integer
+    active : integer (0 or 1)
+  }
+
+lecture_video_screenshots
+  key : hash - integer
+  secondary : [lecture_video_hash]
+  value = {
+    timestamp : integer (offset on video)
+    date : epoch
+    url : ''
+    resolution : {
+      width: integer
+      height: integer
+    }
+    active : integer (0 or 1)
+  }
+
+  
+
+lecture_presentation
+  key : hash - integer
+  secondary : [lecture_hash]
+  value = {
+    date : epoch
+    name : ''
+    description : ''
+    duration : integer
+    bit_rate : integer
+    codec : ''
+    resolution : {
+      width: integer
+      height: integer
+    }
+    fps : integer
+    active : integer (0 or 1)
+  }
+
+lecture_slides
+  key : hash - integer
+  secondary : [lecture_presentation_hash]
+  value = {
+    date : epoch
+    name : ''
+    description : ''
+    duration : integer
+    bit_rate : integer
+    codec : ''
+    resolution : {
+      width: integer
+      height: integer
+    }
+    fps : integer
+    active : integer (0 or 1)
+  }

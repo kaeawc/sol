@@ -3,6 +3,8 @@ angular.module('app').config ['$routeProvider', ($routeProvider) ->
   $routeProvider
   .when '/closest',
     controller: 'closest'
+  .when '/login',
+    controller: 'login'
   .otherwise
     redirectTo: '/'
 ]
