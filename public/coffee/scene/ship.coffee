@@ -28,3 +28,5 @@ define [
 
     zoom: (level) ->
       console.log 'Zooming to ' + level
+
+  Ship
