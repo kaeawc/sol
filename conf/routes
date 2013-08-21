@@ -1,7 +1,15 @@
 GET     /                                  controllers.Landing.get
 
-GET     /asteriod/:name                    controllers.Asteriods.get(name)
-POST    /asteriod                          controllers.Asteriods.post
-PUT     /asteriod                          controllers.Asteriods.put
+GET     /login                             controllers.Login.get
+POST    /login                             controllers.Login.post
+GET     /logout                            controllers.Logout.get
+
+GET     /book/:title                       controllers.Books.get(title)
+POST    /book                              controllers.Books.post
+PUT     /book                              controllers.Books.put
+
+GET     /author/:name                      controllers.Authors.get(name)
+POST    /author                            controllers.Authors.post
+PUT     /author                            controllers.Authors.put
 
 GET     /*file                             controllers.Assets.at(path="/public", file)
